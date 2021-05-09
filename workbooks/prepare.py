@@ -12,6 +12,7 @@ import unicodedata
 import re
 
 from env import github_token, github_username
+
 #-----------------------------------------------------------------------------
 
 def drop_nulls(dw):
