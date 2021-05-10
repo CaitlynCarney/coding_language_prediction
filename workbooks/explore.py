@@ -30,7 +30,7 @@ def show_counts_and_ratios(dw):
     # return new df
     return languages
 
-def plot_count_and_percent(dw):
+def plot_count_and_percent(dw, languages):
     '''plots the number of times each language is used
     plot the percent that each language has been used'''
     # set the subplot information
@@ -55,22 +55,22 @@ def seperate_top_six(dw):
     returns everything the top 6 languages'''
     # Separate the top 6 languages
     # Separate Java Script Words
-    js_words = ' '.join(dw[dw.language == 'JavaScript'].all_clean)
+    js_words = ' '.join(dw[dw.language == 'JavaScript'].all_clean_lemma)
     js_words = js_words.split()
     # Separate HTML Words
-    html_words = ' '.join(dw[dw.language == 'HTML'].all_clean)
+    html_words = ' '.join(dw[dw.language == 'HTML'].all_clean_lemma)
     html_words = html_words.split()
     # Separate Java Words
-    java_words = ' '.join(dw[dw.language == 'Java'].all_clean)
+    java_words = ' '.join(dw[dw.language == 'Java'].all_clean_lemma)
     java_words = java_words.split()
     # Separate Python Words
-    python_words = ' '.join(dw[dw.language == 'Python'].all_clean)
+    python_words = ' '.join(dw[dw.language == 'Python'].all_clean_lemma)
     python_words = python_words.split()
     # Separate C# Words
-    cpound_words = ' '.join(dw[dw.language == 'C#'].all_clean)
+    cpound_words = ' '.join(dw[dw.language == 'C#'].all_clean_lemma)
     cpound_words = cpound_words.split()
     # Separate CSS Words
-    css_words = ' '.join(dw[dw.language == 'CSS'].all_clean)
+    css_words = ' '.join(dw[dw.language == 'CSS'].all_clean_lemma)
     css_words = css_words.split()
     return js_words, html_words, java_words, python_words, cpound_words, css_words
     
@@ -78,7 +78,7 @@ def string_for_all(dw):
     ''' takes in specified dataframe
     returns a string of all words found through all langages'''
     # create one for all words
-    all_words = ' '.join(dw.all_clean)
+    all_words = ' '.join(dw.all_clean_lemma)
     all_words = all_words.split()
     return all_words
 
@@ -88,46 +88,46 @@ def seperate_leftovers(dw):
     separates each language into their own string of words
     returns everything but the top 6 languages'''
     # Separate CSS Words
-    swift_words = ' '.join(dw[dw.language == 'Swift'].all_clean)
+    swift_words = ' '.join(dw[dw.language == 'Swift'].all_clean_lemma)
     swift_words = swift_words.split()
     # Separate CSS Words
-    c_words = ' '.join(dw[dw.language == 'C'].all_clean)
+    c_words = ' '.join(dw[dw.language == 'C'].all_clean_lemma)
     c_words = c_words.split()
     # Separate CSS Words
-    dart_words = ' '.join(dw[dw.language == 'Dart'].all_clean)
+    dart_words = ' '.join(dw[dw.language == 'Dart'].all_clean_lemma)
     dart_words = dart_words.split()
     # Separate CSS Words
-    jupyter_words = ' '.join(dw[dw.language == 'Jupyter Notebook'].all_clean)
+    jupyter_words = ' '.join(dw[dw.language == 'Jupyter Notebook'].all_clean_lemma)
     jupyter_words = jupyter_words.split()
     # Separate CSS Words
-    script_words = ' '.join(dw[dw.language == 'TypeScript'].all_clean)
+    script_words = ' '.join(dw[dw.language == 'TypeScript'].all_clean_lemma)
     script_words = script_words.split()
     # Separate CSS Words
-    arduino_words = ' '.join(dw[dw.language == 'Arduino'].all_clean)
+    arduino_words = ' '.join(dw[dw.language == 'Arduino'].all_clean_lemma)
     arduino_words = arduino_words.split()
     # Separate CSS Words
-    ruby_words = ' '.join(dw[dw.language == 'Ruby'].all_clean)
+    ruby_words = ' '.join(dw[dw.language == 'Ruby'].all_clean_lemma)
     ruby_words = ruby_words.split()
     # Separate CSS Words
-    tsql_words = ' '.join(dw[dw.language == 'TSQL'].all_clean)
+    tsql_words = ' '.join(dw[dw.language == 'TSQL'].all_clean_lemma)
     tsql_words = tsql_words.split()
     # Separate CSS Words
-    kotlin_words = ' '.join(dw[dw.language == 'Kotlin'].all_clean)
+    kotlin_words = ' '.join(dw[dw.language == 'Kotlin'].all_clean_lemma)
     kotlin_words = kotlin_words.split()
     # Separate CSS Words
-    r_words = ' '.join(dw[dw.language == 'R'].all_clean)
+    r_words = ' '.join(dw[dw.language == 'R'].all_clean_lemma)
     r_words = r_words.split()
     # Separate CSS Words
-    lua_words = ' '.join(dw[dw.language == 'Lua'].all_clean)
+    lua_words = ' '.join(dw[dw.language == 'Lua'].all_clean_lemma)
     lua_words = lua_words.split()
     # Separate CSS Words
-    php_words = ' '.join(dw[dw.language == 'PHP'].all_clean)
+    php_words = ' '.join(dw[dw.language == 'PHP'].all_clean_lemma)
     php_words = php_words.split()
     # Separate CSS Words
-    go_words = ' '.join(dw[dw.language == 'Go'].all_clean)
+    go_words = ' '.join(dw[dw.language == 'Go'].all_clean_lemma)
     go_words = go_words.split()
     # Separate CSS Words
-    vue_words = ' '.join(dw[dw.language == 'Vue'].all_clean)
+    vue_words = ' '.join(dw[dw.language == 'Vue'].all_clean_lemma)
     vue_words = vue_words.split()
     # return them
     return swift_words, c_words, dart_words, jupyter_words, script_words, arduino_words, ruby_words, tsql_words, kotlin_words, r_words, lua_words, php_words, go_words, vue_words
@@ -307,7 +307,6 @@ def python_words_cloud(python_words):
     python_words = ' '.join(python_words)
     #plt.figure(figsize=(16,8))
     mask = np.array(Image.open('/Users/caitlyncarney/masks/angel_sil.jpeg'))
-    image_colors = ImageColorGenerator(mask)
     img = WordCloud(background_color="black", mask=mask, max_words=2000, 
                     contour_color='white', contour_width=50,
                     stopwords=STOPWORDS, max_font_size=156,
@@ -325,16 +324,19 @@ def compare_single_clouds(js_words, html_words, java_words, python_words):
 
     plt.subplot(1,4,1)
     js_words_cloud(js_words)
+    plt.title('Java Script Words', size=40)
 
     plt.subplot(1,4,2)
     html_words_cloud(html_words)
+    plt.title('HTML Words', size=40)
 
     plt.subplot(1,4,3)
     java_words_cloud(java_words)
+    plt.title('Java Words', size=40)
 
     plt.subplot(1,4,4)
     python_words_cloud(python_words)
-    
+    plt.title('Python Words', size=40)
 #-----------------------------------------------------------------------------
 # For presentation (all words word cloud)
 
@@ -433,15 +435,19 @@ def compare_bigram_clouds(js_words, html_words, java_words, python_words):
     
     plt.subplot(1,4,1)
     js_bi_cloud(js_words)
-
+    plt.title('Java Script Word Combos', size=40)
+    
     plt.subplot(1,4,2)
     html_bi_cloud(html_words)
+    plt.title('HTML Word Combos', size=40)
     
     plt.subplot(1,4,3)
     java_bi_cloud(java_words)
+    plt.title('Java Script Word Combos', size=40)
     
     plt.subplot(1,4,4)
     python_bi_cloud(python_words)
+    plt.title('Python Word Combos', size=40)
 #-----------------------------------------------------------------------------
 # For presentation (all words bigram word cloud)
 
@@ -457,6 +463,7 @@ def all_bi_cloud(all_words):
                     random_state=42, width=1000, height=800, colormap='Blues').generate_from_frequencies(data)
     plt.imshow(img)
     plt.axis('off')
+    plt.title('All Bigram Word Combinations', size=40)
 
 #-----------------------------------------------------------------------------
 # For presentation (bigram bar plots)
