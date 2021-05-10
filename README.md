@@ -1,5 +1,5 @@
 <a name="top"></a>
-![name of photo](url_to_photo)
+![name of photo](https://github.com/CaitlynCarney/coding_language_prediction/blob/main/photos/for_readme/title.jpg?raw=true)
 
 ***
 [[Project Description](#project_description)]
@@ -22,17 +22,22 @@ ___
   <summary>Click to expand!</summary>
 
 ### Description
-- 
+- Using web-scraping techniques scrape githubs doctor who repositories to take the text from the readme files and the primary coding language; to build a data set. Then transform the new dataset into a form that can be used in a natural language processing machine learning model (NLP)., and choosing the best one for predicting the coding language based on the text from readme files.
 
 ### Goals
-- 
+- Create a NLP model to predict the programming language used in a github repository based on the words and word combinations found in the readme files.
     
 ### Where did you get the data?
-- 
+- Web scrapping github with the search term "Doctor Who"
 
-Project Name: ___
+    
+    
+    
+### Resume Write Up
 
-explain the project for resume
+Project Name: Predicting Coding Language
+    
+explain the project for resume:
     
 
 </details>
@@ -48,32 +53,32 @@ explain the project for resume
 ### Projet Outline:
     
 - Acquisiton of data
+    - Search for Doctor who repos on git hub
+    - Web scrape to gather data
 - Prepare and clean data with python - Jupyter Labs
-    - Drop
-    - Rename
-    - Create
-    - Dummies
-    - Etc.
+    - Drop nulls
+    - Make all text lowercase
+    - Tokenize the data
+    - Stem/Lemmatize
+    - Remove stopwords
 - Explore data:
-    - What are the features?
-    - Null values:
-        - Are the fixable or should they just be deleted.
-    - Categorical or continuous values.
-    - Make graphs that show:
-        - At least 2.
-- Run statistical analysis:
-    - At least 2.
+    - How often are words used?
+        - Count
+        - Percentage
+    - Check out word clouds for top 4 languages
+        - Is ther anything that stands out?
+    - Check out bar graphs using bigrams for top 4 languages
+        - Is there anything of importance?
+    - Check out word clouds using bigrams for top 4 languages
+        - What di you notice?
 - Modeling:
     - Make multiple models.
     - Pick best model.
     - Test Data.
     - Conclude results.
-        
-### Hypothesis
-- 
-
+    
 ### Target variable
-- 
+- Language
 
 </details>
 
@@ -89,16 +94,6 @@ explain the project for resume
 ### Explore:
 - 
     
-    
-### Stats
-- Stat Test 1: 
-    - which test:
-        - reject of accept null
-
-            
-- Stat Test 2: 
-    - which test:
-        - reject of accept null
     
 
 ### Modeling:
