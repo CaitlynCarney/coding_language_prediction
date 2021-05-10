@@ -101,8 +101,8 @@ def logistic_regression(y_train, y_validate, y_test, X_train_vectorized, X_valid
     train = (train.actual == train.predicted).mean()
     # Validate Accuracy
     validate = (validate.actual == validate.predicted).mean()
-    print(f"The accuracy on the train data set is: \n", round(train,3))
-    print(f"The accuracy on the validate data set is: \n", round(validate,3))
+    print(f"Logistic regression accuracy on the train data set is: \n", round(train,3))
+    print(f"Logistic regression accuracy on the validate data set is: \n", round(validate,3))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -129,8 +129,8 @@ def balanced_log_regression(y_train, y_validate, y_test, X_train_vectorized, X_v
     train = lm2.score(X_train_vectorized, y_train)
     # Validate Accuracy
     validate = lm2.score(X_validate_vectorized, y_validate)
-    print(f"The accuracy on the train data set is: \n", round(train,3))
-    print(f"The accuracy on the validate data set is: \n", round(validate,3))
+    print(f"Balanced Logistic Regression accuracy on the train data set is: \n", round(train,3))
+    print(f"Balanced Logistic Regression accuracy on the validate data set is: \n", round(validate,3))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -157,8 +157,8 @@ def knn_model(y_train, y_validate, y_test, X_train_vectorized, X_validate_vector
     train = knn.score(X_train_vectorized, y_train)
     # validate accuracy
     validate = knn.score(X_validate_vectorized, y_validate)
-    print(f"The accuracy on the train data set is: \n", round(train,3))
-    print(f"The accuracy on the validate data set is: \n", round(validate,3))
+    print(f"KNN accuracy on the train data set is: \n", round(train,3))
+    print(f"KNN accuracy on the validate data set is: \n", round(validate,3))
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -186,8 +186,8 @@ def decision_tree_model(y_train, y_validate, y_test, X_train_vectorized, X_valid
     train = clf1.score(X_train_vectorized, y_train)
     # validate accuracy
     validate = clf1.score(X_validate_vectorized, y_validate)
-    print(f"The accuracy on the train data set is: \n", round(train,3))
-    print(f"The accuracy on the validate data set is: \n", round(validate,3))
+    print(f"Decision Tree accuracy on the train data set is: \n", round(train,3))
+    print(f"Decision Tree accuracy on the validate data set is: \n", round(validate,3))
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -216,8 +216,8 @@ def random_forest_model(y_train, y_validate, y_test, X_train_vectorized, X_valid
     train = rf.score(X_train_vectorized, y_train)
     # validate_accuracy
     validate = rf.score(X_validate_vectorized, y_validate)
-    print(f"The accuracy on the train data set is: \n", round(train,3))
-    print(f"The accuracy on the validate data set is: \n", round(validate,3))
+    print(f"Random Forest accuracy on the train data set is: \n", round(train,3))
+    print(f"Random Forest accuracy on the validate data set is: \n", round(validate,3))
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -245,8 +245,8 @@ def ridge_class_model(y_train, y_validate, y_test, X_train_vectorized, X_validat
     train = clf2.score(X_train_vectorized, y_train)
     # validate accuracy
     validate = clf2.score(X_validate_vectorized, y_validate)
-    print(f"The accuracy on the train data set is: \n", round(train,3))
-    print(f"The accuracy on the validate data set is: \n", round(validate,3))
+    print(f"Ridge Classifier accuracy on the train data set is: \n", round(train,3))
+    print(f"Ridge Classifier accuracy on the validate data set is: \n", round(validate,3))
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -274,10 +274,28 @@ def sgd_class_model(y_train, y_validate, y_test, X_train_vectorized, X_validate_
     train = clf3.score(X_train_vectorized, y_train)
     # validate accuracy
     validate = clf3.score(X_validate_vectorized, y_validate)
-    print(f"The accuracy on the train data set is: \n", round(train,3))
-    print(f"The accuracy on the validate data set is: \n", round(validate,3))
+    print(f"SDGClassifier accuracy on the train data set is: \n", round(train,3))
+    print(f"SDGClassifier accuracy on the validate data set is: \n", round(validate,3))
+    
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# Train Validate Outcomes
 
+def all_models(y_train, y_validate, y_test, X_train_vectorized, X_validate_vectorized, X_test_vectorized):
+    logistic_regression(y_train, y_validate, y_test, X_train_vectorized, X_validate_vectorized, X_test_vectorized)
+    print("________________________________________________________________")
+    balanced_log_regression(y_train, y_validate, y_test, X_train_vectorized, X_validate_vectorized, X_test_vectorized)
+    print("________________________________________________________________")
+    knn_model(y_train, y_validate, y_test, X_train_vectorized, X_validate_vectorized, X_test_vectorized)
+    print("________________________________________________________________")
+    decision_tree_model(y_train, y_validate, y_test, X_train_vectorized, X_validate_vectorized, X_test_vectorized)
+    print("________________________________________________________________")
+    random_forest_model(y_train, y_validate, y_test, X_train_vectorized, X_validate_vectorized, X_test_vectorized)
+    print("________________________________________________________________")
+    ridge_class_model(y_train, y_validate, y_test, X_train_vectorized, X_validate_vectorized, X_test_vectorized)
+    print("________________________________________________________________")
+    sgd_class_model(y_train, y_validate, y_test, X_train_vectorized, X_validate_vectorized, X_test_vectorized)    
+    
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Best and Final Model
@@ -305,6 +323,7 @@ def sgd_best_model(y_train, y_validate, y_test, X_train_vectorized, X_validate_v
     validate = clf3.score(X_validate_vectorized, y_validate)
     # test accuracy
     test = clf3.score(X_test_vectorized, y_test)
+    print("Baseline Accuracy: \n 0.295")
     print(f"SGDClassifier Model Train: \n", round(train,3))
     print(f"SGDClassifier Model Validate: \n", round(validate,3))
     print(f"SGDClassifier Model Test: \n", round(test,3))
