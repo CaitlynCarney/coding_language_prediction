@@ -8,15 +8,14 @@
 [[Data Dictionary](#dictionary)]
 [[Acquire & Prep](#acquire_and_prep)]
 [[Data Exploration](#explore)]
-[[Statistical Analysis](#stats)]
 [[Modeling](#model)]
 [[Conclusion](#conclusion)]
 [[Recreate This Project](#recreate)]
 ___
 
 
-## <a name="project_description"></a> Project Description
-![desc](URL to photo)
+## <a name="project_description"></a> 
+![desc](https://github.com/CaitlynCarney/coding_language_prediction/blob/main/photos/for_readme/project_desc.png?raw=true)
 [[Back to top](#top)]
 
 <details>
@@ -39,8 +38,8 @@ explain the project for resume
 </details>
     
     
-## <a name="planning"></a> Project Planning
-![plan](URl to photo)
+## <a name="planning"></a>
+![plan](https://github.com/CaitlynCarney/coding_language_prediction/blob/main/photos/for_readme/project_plan.png?raw=true)
 [[Back to top](#top)]
 
 <details>
@@ -79,8 +78,8 @@ explain the project for resume
 </details>
 
     
-## <a name="findings"></a> Key Findings
-![find](URL to photo)
+## <a name="findings"></a>
+![find](https://github.com/CaitlynCarney/coding_language_prediction/blob/main/photos/for_readme/key_findings.png?raw=true)
 
 [[Back to top](#top)]
 
@@ -119,8 +118,8 @@ explain the project for resume
     
 </details>
 
-## <a name="dictionary"></a> Data Dictionary
-![dict](URL to photo)
+## <a name="dictionary"></a> 
+![dict](https://github.com/CaitlynCarney/coding_language_prediction/blob/main/photos/for_readme/data_dict.png?raw=true)
 
 [[Back to top](#top)]
 
@@ -160,8 +159,8 @@ explain the project for resume
 
 
 
-## <a name="explore"></a> Exploration
-![dict](URL to photo)
+## <a name="explore"></a> 
+![dict](https://github.com/CaitlynCarney/coding_language_prediction/blob/main/photos/for_readme/acquire_prepare.png?raw=true)
 [[Back to top](#top)]
 
 <details>
@@ -176,78 +175,9 @@ explain the project for resume
 
 </details>    
 
-## <a name="stats"></a> Statistical Testing
-![stats](URL to photo)
-[[Back to top](#top)]
-<details>
-  <summary>Click to expand!</summary>
 
-
-### Stats Test 1:
-- What is the test?
-    - 
-- Why use this test?
-    - 
-- What is being compared?
-    - 
-
-#### Hypothesis:
-- The null hypothesis (H<sub>0</sub>) is...
-    - 
-- The alternate hypothesis (H<sub>1</sub>) is ...
-    - 
-
-
-#### Confidence level and alpha value:
-- I established a 95% confidence level
-- alpha = 1 - confidence, therefore alpha is 0.05
-
-#### Results:
-- Reject the null or fail to reject
-- Move forward with Alternative Hypothesis or not 
-
-- Summary:
-    - F score of:
-        - 
-    - P vlaue of:
-        - 
-
-### Stats Test 2:
-- What is the test?
-    - 
-- Why use this test?
-    - 
-- What is being compared?
-    - 
-
-#### Hypothesis:
-- The null hypothesis (H<sub>0</sub>) is...
-    - 
-- The alternate hypothesis (H<sub>1</sub>) is ...
-    - 
-
-
-#### Confidence level and alpha value:
-- I established a 95% confidence level
-- alpha = 1 - confidence, therefore alpha is 0.05
-
-#### Results:
-- Reject the null or fail to reject
-- Move forward with Alternative Hypothesis or not 
-
-- Summary:
-    - F score of:
-        - 
-    - P vlaue of:
-        - 
-
-***
-​
-    
-</details>    
-
-## <a name="model"></a> Modeling
-![model](URL to photo)
+## <a name="model"></a> 
+![model](https://github.com/CaitlynCarney/coding_language_prediction/blob/main/photos/for_readme/model.png?raw=true)
 [[Back to top](#top)]
 <details>
   <summary>Click to expand!</summary>
@@ -292,8 +222,8 @@ Model Accuracy:
 
 </details>  
 
-## <a name="conclusion"></a> Conclusion
-![conclusion](URL to photo)
+## <a name="conclusion"></a> 
+![conclusion](https://github.com/CaitlynCarney/coding_language_prediction/blob/main/photos/for_readme/conc.png?raw=true)
 [[Back to top](#top)]
 <details>
   <summary>Click to expand!</summary>
@@ -308,8 +238,8 @@ I recommend...
 </details>  
 
 
-## <a name="Recreate This Project"></a> Recreate the Project
-![recreate](URL to Photo)
+## <a name="Recreate This Project"></a>
+![recreate](https://github.com/CaitlynCarney/coding_language_prediction/blob/main/photos/for_readme/re-create.png?raw=true)
 [[Back to top](#top)]
 
 <details>
