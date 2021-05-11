@@ -92,21 +92,31 @@ explain the project for resume:
   <summary>Click to expand!</summary>
 
 ### Explore:
-- 
+- There were no commonalities between the languages and their top 20 words/phrases.
+- Java script is the most commonly used coding language and makes up the top 10 most frequent words of all languages together.
+- There are specific phrases/words that are used more often in each coding language.
     
-    
-
 ### Modeling:
 - Baseline:
-    - 
+    - 29.5%
 - Models Made:
-    - 
+    - Logistic Regression
+    - Balanced Logistic Regression
+    - KNN
+    - Decision Tree
+    - Random Forest
+    - Ridge Classifier
+    - SDG Classifier
 - Best Model:
-    - 
+    - SDG Classifier
 - Model testing:
-    - 
+    - Train
+        - 97.7%
+    - Validate
+        - 57.9%
 - Performance:
-    - 
+    - Test
+        - 43.8%
 
 ***
 
@@ -125,28 +135,50 @@ explain the project for resume:
     
 | Attribute | Definition | Data Type |
 | ----- | ----- | ----- | 
-| Attribute | Definition | Data Type |
-| Attribute | Definition | Data Type |
-| Attribute | Definition | Data Type |
-  
-    
+| all_clean_lemma | all cleaning stages done using lemmatizing | string |    
+| all_clean_stem | all cleaning stages done using stemming | string | 
+| cleaned_content | contents of REASME file ran through a basic clean funciton | string |
+| language* | coding language primarily used in the repository | string |
+| lemma_content | tozenized_content ran through a lemmatizing funciton | string |
+| no_stopwords_lemma | stopwords removed from lemma_content | string |
+| no_stopwords_stem | stopwords removed from stemmed_content | string |
+| readme_contents | contents of README file directly from repository | string |
+| repo | name of repository | string |
+| stemmed_content | tokenized_content ran through a stemming funciton | string |
+| tokenized_content | cleaned_content ran through tokenized funciton | string |
+
 \*  Indicates the target feature in this Zillow data.
 
 ***
 </details>
 
-## <a name="acquire_and_prep"></a> Acquire and Prepare Data
-![acquire_prep](URL to photo)
+## <a name="acquire_and_prep"></a>
+![acquire_prep](https://github.com/CaitlynCarney/coding_language_prediction/blob/main/photos/for_readme/acquire_prepare.png?raw=true)
 [[Back to top](#top)]
 
 <details>
   <summary>Click to expand!</summary>
 
 ### Acquire Data:
-- 
+1. I went to https://github.com/ 
+2. Typed "Doctor Who" into the search bar
+3. I then created a function to scrape all the repos that came up with this search
+4. These functions then went into webscraping functions to create a csv containing the repo file name, primary coding language used, and the contents of the README files.
+
+*To see all funcitons used in the data acquisition stage please see the acquire.py file in my github repository*
     
 ### Prepare Data
-- 
+1. Drop all null values in language and readme_content
+2. Make all characters in readme_content lowercase
+3. Tokenize the strings in readme_content
+4. Stem/Lemmatize the strings
+5. Remove stopwords inludeing some new stopwords of my choosing.
+
+- Please note that:
+    - I chose to create a new column for each step of the cleaning process.
+        - I did this because if I wanted to come back and add in repos later on, I may need to use stemming process instead of the lemmatizing process.d.
+
+*For functions used in the cleaning process please see my prepare.py in my github repository*
 
 ***
 
@@ -155,16 +187,17 @@ explain the project for resume:
 
 
 ## <a name="explore"></a> 
-![dict](https://github.com/CaitlynCarney/coding_language_prediction/blob/main/photos/for_readme/acquire_prepare.png?raw=true)
+![dict](https://github.com/CaitlynCarney/coding_language_prediction/blob/main/photos/for_readme/explore.png?raw=true)
 [[Back to top](#top)]
 
 <details>
   <summary>Click to expand!</summary>
     
-- wrangle.py 
 
 ### Findings:
-- 
+- There were no commonalities between the languages and their top 20 words/phrases.
+- Java script is the most commonly used coding language and makes up the top 10 most frequent words of all languages together.
+- There are specific phrases/words that are used more often in each coding language.
 
 ***
 
@@ -179,38 +212,56 @@ explain the project for resume:
 
 Summary of modeling choices...
         
-### Models and R<sup>2</sup> Values:
-- 
+    
+### Models:
+- Logistic Regression
+- Balanced Logistic Regression
+- KNN
+- Decision Tree
+- Random Forest
+- Ridge Classifier
+- SDG Classifier
 
+    
 ### Baseline Accuracy  
-- 
+- 29.5%
+
+### Logistic Regression Model
+Model Train Accuracy:  
+    - 95.5%
     
-### Model
-Model Accuracy:  
+### Balanced Logistic Regression Model
+Model Train Accuracy:  
+    - 97.7%
     
-### Model
-Model Accuracy:  
+### KNN Model
+Model Train Accuracy: 
+    - 61.4%
+    
+### Decisiion Tree Model 
+Model Train Accuracy: 
+    - 52.3%
+ 
+### Rndom Forest Model
+Model Train Accuracy: 
+    - 43.2
+    
+### Ridge Classifier Model
+Model Train Accuracy: 
+    - 54.5%
+    
+### SDG Classifier Model
+Model Train Accuracy: 
+    - 97.7%
 
 
 ## Selecting the Best Model:
-
-- 
-    
-### Use Table below as a template for all Modeling results for easy comparison:
-
-| Model | Accuracy with Train | Accuracy with Validate | Accuracy with Test|
-| ---- | ----| ---- | ---- |
-| Model | Accuracy with Train | Accuracy with Validate | Accuracy with Test|
-| Model | Accuracy with Train | Accuracy with Validate | Accuracy with Test|
-
-
-- Why did I choose this model?
-    - 
-
+- SDG Classifier Model
+    - Model Validate Accuracy
+        - 57.9%
+   
 ## Testing the Model
-
-- Model Testing Results
-     - 
+    - 43.8% accuracy
 
 
 ***
@@ -223,11 +274,11 @@ Model Accuracy:
 <details>
   <summary>Click to expand!</summary>
 
-I found....
+I found that there are no commonalities in frequent words or phrases between the top 4 coding languages. I also found the Java script is the most commonly used out of the languages and makes up for the most common top 10 most common words out af all of the langauges.
+    
+With more time I would love to gether more repos and see if I can improve the model by obtaining more observations.
 
-With further time...
-
-I recommend...
+I recommend using this model to predict the primary coding language used based on github readme files. 
 
 
 </details>  
@@ -240,8 +291,14 @@ I recommend...
 <details>
   <summary>Click to expand!</summary>
 
-### 1. Getting started
+### Getting started
 
+1. Go to https://github.com/
+2. Type "Doctor Who" into the search bar
+3. Use first 2 funcitons in the acquire file in my git hub repository to get the list of repos.
+4. Copy and past this list into the list named REPOS in the acquire.py file
+5. Run the last funciton in acquire.py file
+6. Run this new dataframe through each funciton in the pepare.py file in my github repository to clean the data.
     
 Good luck I hope you enjoy your project!
 
@@ -251,7 +308,7 @@ Good luck I hope you enjoy your project!
 
 ## 
 
-![Folder Contents](URL to photo)
+![Folder Contents](https://github.com/CaitlynCarney/coding_language_prediction/blob/main/photos/for_readme/file_outline.jpg?raw=true)
 
 
 >>>>>>>>>>>>>>>
